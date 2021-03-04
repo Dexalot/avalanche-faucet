@@ -4,7 +4,7 @@ There are two different layers in this project. The Node Express backend and the
 
 ## Requirements
 - Recent version of npm (6.13.4)
-- Node v12.14.1
+- Node v14.16.0
 - Google reCaptcha keys for **reCaptcha v2** with **"I'm not a robot" Checkbox**. Make sure to have 'localhost' listed in the domains. (https://www.google.com/recaptcha/intro/v3.html)
 
 ## Vue Application
