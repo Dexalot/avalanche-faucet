@@ -2,9 +2,9 @@
     <v-container fill-height >
         <v-row justify="center" align="center">
             <v-card class="card" :loading="isAjax">
-                <v-img src="/og_banner.png" height="140"></v-img>
+                <v-img src="/dexalot_logo.png" height="140"></v-img>
                 <v-card-title>
-                    AVAX Fuji Testnet Faucet
+                    Dexalot Fuji Testnet Faucet
                 </v-card-title>
 
 
@@ -227,6 +227,9 @@
             // either X for x-chain or C for c-chain, or null if none
             assetType(){
                 if(this.verifyAddress(this.address)){
+                    if(this.address.substring(0,2) === '0x'){
+                        return 'C'
+                    }
                     return this.address[0];
                 }
                 return null;
