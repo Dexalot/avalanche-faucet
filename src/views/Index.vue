@@ -2,7 +2,7 @@
     <v-container fill-height >
         <v-row justify="center" align="center">
             <v-card class="card" :loading="isAjax">
-                <v-img src="/dexalot_logo.png" height="140"></v-img>
+                <v-img src="/dexalot-logo-wide.png" height="140" style="object-fit: contain" contain></v-img>
                 <v-card-title>
                     Dexalot Fuji Testnet Faucet
                 </v-card-title>
