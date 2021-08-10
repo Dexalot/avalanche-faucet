@@ -4,7 +4,8 @@
             <v-card class="card" :loading="isAjax">
                 <v-img src="/dexalot-logo-wide.png" height="140" style="object-fit: contain" contain></v-img>
                 <v-card-title>
-                    Dexalot Testnet Faucet
+                     <span v-if="VUE_APP_MODE == 'fuji'">Dexalot Fuji Testnet Faucet</span>
+                     <span v-if="VUE_APP_MODE == 'development'">Dexalot Development Net Faucet</span>
                 </v-card-title>
 
 
@@ -52,6 +53,7 @@
     const avalanche = require("avalanche");
     let bintools = avalanche.BinTools.getInstance();
 
+    const VUE_APP_MODE = process.env.VUE_APP_MODE
 
 
     export default {
@@ -60,6 +62,7 @@
         },
         data(){
             return{
+                VUE_APP_MODE: VUE_APP_MODE,
                 errAddress: false,
                 isAjax: false,
                 address: '',
