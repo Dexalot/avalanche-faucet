@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build-dev": "rimraf dist && cat ./.env.dev > .env && vue-cli-service build && npm run zip-dev development ./",
+    "build-fuji": "rimraf dist && cat ./.env.fuji > .env && vue-cli-service build && npm run zip-fuji fuji ./",
     "lint": "vue-cli-service lint",
-    "test": "jest"
+    "test": "jest",
+    "zip-dev": "rimraf ./faucet-release-development.zip && node ./ziputil.js",
+    "zip-fuji": "rimraf ./faucet-release-fuji.zip && node ./ziputil.js"
   },
   "dependencies": {
     "@avalabs/vue_components": "^0.6.2",
@@ -48,7 +51,9 @@
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-vuetify": "^2.0.3",
     "vue-template-compiler": "^2.6.10",
-    "vuetify-loader": "^1.3.0"
+    "vuetify-loader": "^1.3.0",
+    "rimraf": "^3.0.2",
+    "zip-dir": "^2.0.0"
   },
   "engines": {
     "node": "14.x"
